@@ -1,3 +1,7 @@
+<?php
+include "proses/koneksi.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,7 +107,7 @@
     <div class="login-box">
         <h2 class="title">SIEGA <span>Admin</span> Login</h2>
         
-        <form action="admin_process_login.php" method="POST">
+        <form action="proses/admin_proses_login.php" method="POST">
             <div class="input-group">
                 <label>Username</label>
                 <input type="text" name="username" placeholder="Masukkan username" required />
