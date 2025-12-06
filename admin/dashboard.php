@@ -1,3 +1,8 @@
+<?php
+include "proses/session.php";
+include "proses/koneksi.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
