@@ -5,87 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Admin</title>
     <style>
-        body {
-        margin: 0;
-        font-family: "Poppins", Arial, sans-serif;
-        background: #ffffff;
-        display: flex;
-    }
-        /* Sidebar */
-        .sidebar {
-        width: 240px;
-        background: #0A0F18;
-        height: 100vh;
-        color: #000;
-        padding-top: 25px;
-        position: fixed;
-        border-right: 3px solid rgba(0,0,0,0.08);
-    }
-        .sidebar h2 {
-        text-align: center;
-        margin: 0 0 35px;
-        font-size: 22px;
-        font-weight: 700;
-    }
-        .menu a {
-        display: block;
-        padding: 14px 22px;
-        color: #004b4b;
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 600;
-        transition: 0.3s;
-    }
-        .menu a:hover {
-        background: rgba(0, 0, 0, 0.12);
-        color: #000;
-    }
+    body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #F6F7FB;
+    display: flex;
+}
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #0F172A;
+    height: 100vh;
+    color: #ffffff;
+    padding-top: 28px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid rgba(0, 255, 255, 0.25);
+}
+.sidebar h2 {
+    text-align: center;
+    margin: 0 0 38px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #00FFFF;
+}
+.menu a {
+    display: block;
+    padding: 14px 24px;
+    color: #e1e1e1;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+    border-left: 4px solid transparent;
+}
+.menu a:hover {
+    background: rgba(0, 255, 255, 0.12);
+    color: #00FFFF;
+    border-left: 4px solid #00FFFF;
+}
 
-        /* Content */
-        .content {
-        margin-left: 240px;
-        padding: 30px 28px;
-        width: calc(100% - 240px);
-        background: #ffffff;
-    }
+/* Content */
+.content {
+    margin-left: 250px;
+    padding: 35px 32px;
+    width: calc(100% - 250px);
+}
 
-        /* Cards */
-        .card {
-        background: #ffffff;
-        padding: 24px;
-        border-radius: 12px;
-        border: 1.5px solid rgba(0, 0, 0, 0.10);
-        box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-        margin-bottom: 25px;
-        transition: 0.3s;
-    }
-        .card:hover {
-        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-        .card h3 {
-        margin: 0 0 12px;
-        color: #003d3d;
-        font-size: 20px;
-    }
+/* Cards */
+.card {
+    background: #ffffff;
+    padding: 26px;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    margin-bottom: 28px;
+    transition: 0.25s;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+.card h3 {
+    margin: 0 0 14px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+}
 
-        /* Table */
-        table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 14px;
-    }
-        th, td {
-        border: 1px solid #d7d7d7;
-        padding: 12px 10px;
-    }
-        th {
-        background: #0A0F18;
-        color: #000;
-        font-weight: 700;
-    }
-        tr:hover td {
-        background: rgba(0, 255, 255, 0.08);
-    }
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+th, td {
+    border: none;
+    padding: 14px 12px;
+    text-align: left;
+}
+th {
+    background: #00FFFF;
+    color: #000;
+    font-weight: 700;
+    font-size: 15px;
+}
+tr:nth-child(even) {
+    background: #F2FDFD;
+}
+tr:hover td {
+    background: rgba(0, 255, 255, 0.15);
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
