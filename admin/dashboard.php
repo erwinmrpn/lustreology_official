@@ -29,7 +29,7 @@
     font-size: 22px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #0F172A;
+    color: #ffffff;
 }
 .menu a {
     display: block;
@@ -87,8 +87,8 @@ th, td {
     text-align: left;
 }
 th {
-    background: #00FFFF;
-    color: #000;
+    background: #0F172A;
+    color: #ffffff;
     font-weight: 700;
     font-size: 15px;
 }
