@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Login</title>
+    <title>Login Admin</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,11 +15,12 @@
             margin: 0;
         }
         .login-container {
-            width: 350px;
-            background: white;
-            padding: 25px;
+            width: 100%;
+            max-width: 380px;
+            background: #ffffff;
+            padding: 35px 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.18);
         }
         h2 {
             text-align: center;
