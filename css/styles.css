@@ -11732,3 +11732,24 @@ html {
     left: -2vw;
   }
 }
+/* Custom class for the image container to enforce height and object fit */
+/* Custom class for the image container - HAPUS HEIGHT PAKSA */
+.image-box-fill {
+    /* Hapus 'height: 200px;' di sini */
+    height: auto; /* Membiarkan tinggi ditentukan oleh kontennya */
+    min-height: 150px; /* Optional: Pastikan ada tinggi minimum */
+    width: 100%; /* Memastikan lebarnya penuh */
+    overflow: hidden;
+    background-color: var(--bs-gray-100); 
+    border-radius: var(--bs-border-radius-xl, 1rem); 
+    padding: 1.5rem; /* Tambahkan padding agar gambar tidak menempel di tepi box */
+}
+
+.image-box-fill img {
+    /* Ubah object-fit: cover menjadi contain, atau hapus style height/object-fit */
+    width: 100%;
+    /* Hapus 'height: 100%;' */
+    height: auto; 
+    object-fit: contain; /* Ini memastikan seluruh gambar terlihat (dengan margin/padding) */
+    display: block;
+}
