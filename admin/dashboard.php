@@ -109,11 +109,9 @@ tr:hover td {
 <body>
     <div class="sidebar">
         <h2>Admin Panel</h2>
-        <div class="menu">
-            <a href="dashboard.php">Dashboard</a>
-            <a href="blog.php">Kelola Blog</a>
-            <a href="proses/logout.php">Logout</a>
-        </div>
+        <?php
+        include "nav_admin.php";
+        ?>
     </div>
 
     <div class="content">
