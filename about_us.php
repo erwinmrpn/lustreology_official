@@ -1,3 +1,14 @@
+<?php
+include "admin/proses/koneksi.php";
+
+// Query join table kategori + about_us
+$kategori  = mysqli_query($conn, "
+     SELECT DISTINCT k.id_kategori, k.kategori
+    FROM tabel_kategori_about_us k
+    JOIN about_us a ON a.id_kategori = k.id_kategori
+    ORDER BY k.id_kategori ASC
+");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,177 +44,73 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-11 col-xl-9 col-xxl-8">
                     <!-- Sejarah SIEGA-->
+
                     <section>
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h2 class="text-primary fw-bolder mb-0">Sejarah SIEGA</h2>
-                        </div>
-                        <!-- BOX Sejarah SIEGA-->
-                        <div class="card shadow border-0 rounded-4 mb-5">
-                            <div class="card-body p-5">
-                                <div class="row align-items-center gx-5">
-                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                        <div class="bg-light p-4 rounded-4">
-                                            <div class="text-primary fw-bolder mb-2">SIEGA</div>
-                                            <div class="small fw-bolder">Sistem Informasi</div>
-                                            <div class="small fw-bolder">E-Commerce</div>
-                                            <div class="small fw-bolder">Game Technology</div>
-                                            <div class="small fw-bolder">AKSI</div>
-                                        </div>
-                                    </div>
+                        <?php while ($kat = mysqli_fetch_assoc($kategori)): ?>
 
-                                    <div class="col-lg-8">
-                                        <p>SIEGA merupakan sebuah singkatan dari beberapa konsentrasi yang ada di Program Studi Sistem Informasi Unika Soegijapranata Semarang yaitu,
-                                            Sistem Informasi, E-Commerce, Game Technology, dan Akuntansi + Sistem Informasi.</p>
-
-                                        <p class="mb-0">SIEGA berdiri sejak 11 November 2011 yang didirikan oleh Prof. Dr. Ridwan Sanjaya S.E., S.Kom., MS.IEC. Program Studi Sistem Informasi mendapatkan ijin penyelenggaraan serta akreditasinya melalui SK Menteri Pendidikan dan Kebudayaan RI No. 235/E/O/2013 pada tanggal 25 Juni 2013 dengan akreditasi pertama yaitu C.</p>
-                                    </div>
-
-                                </div>
+                            <!-- Judul kategori (muncul 1x per kategori) -->
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h2 class="text-primary fw-bolder mb-0"><?= strtoupper($kat['kategori']) ?></h2>
                             </div>
-                        </div>
-                        <!-- Box Sertifikat -->
-                        <div class="card shadow border-0 rounded-4 mb-5">
-                            <div class="card-body p-5">
-                                <div class="row align-items-center gx-5">
 
-                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                        <div class="bg-light p-4 rounded-4">
-                                            <div class="text-primary fw-bolder mb-2">AKREDITASI</div>
-                                            <div class="small fw-bolder">Sistem Informasi</div>
-                                            <div class="small fw-bolder">E-Commerce</div>
-                                            <div class="small fw-bolder">Game Technology</div>
-                                            <div class="small fw-bolder">AKSI</div>
-                                        </div>
-                                    </div>
+                            <?php
+                            // Ambil semua konten berdasarkan kategori ini
+                            $detail = mysqli_query($conn, "
+        SELECT * FROM about_us
+        WHERE id_kategori = " . $kat['id_kategori'] . "
+        ORDER BY id ASC
+    ");
+                            ?>
 
-                                    <div class="col-lg-8">
-                                        <div class="image-box-fill rounded-4 shadow-sm">
-                                            <img
-                                                src="assets/sertifikat_akreditasi.png"
-                                                alt="Sertifikat Akreditasi"
-                                                class="img-fluid" />
-                                        </div>
-                                    </div>
+                            <?php while ($row = mysqli_fetch_assoc($detail)): ?>
 
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Visi & Misi SIEGA-->
-                    <section>
-                        <h2 class="text-secondary fw-bolder mb-4">Visi & Misi SIEGA</h2>
-                        <!-- BOX VISI-->
-                        <div class="card shadow border-0 rounded-4 mb-5">
-                            <div class="card-body p-5">
-                                <div class="row align-items-center gx-5">
-                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                        <div class="bg-light p-4 rounded-4">
-                                            <div class="mb-2">
-                                                <div class="small fw-bolder">VISI</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div>Menjadi komunitas akademik yang unggul dalam pendidikan, penelitian dan pengabdian dengan dilandasi nilai-nilai Kristiani: cinta kasih, keadilan dan kejujuran</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card shadow border-0 rounded-4 mb-5">
-                            <div class="card-body p-5">
-                                <div class="row align-items-center gx-5">
-
-                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                        <div class="bg-light p-4 rounded-4">
-                                            <div class="mb-2">
-                                                <div class="small fw-bolder">MISI</div>
+                                <?php if (!empty($row['deskripsi'])): ?>
+                                    <!-- Box DESKRIPSI -->
+                                    <div class="card shadow border-0 rounded-4 mb-5">
+                                        <div class="card-body p-5">
+                                            <div class="row align-items-center gx-5">
+                                                <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                                    <div class="bg-light p-4 rounded-4">
+                                                        <div class="text-primary fw-bolder mb-2"><?= $row['judul'] ?></div>
+                                                        <div class="small fw-bolder"><?= $row['judul_panjang'] ?></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <?= nl2br($row['deskripsi']) ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-8">
-                                        <ul class="mb-0">
-                                            <li class="mb-2">Menyelenggarakan pendidikan yang berkualitas secara akademik dengan didukung pengembangan kepribadian yang utuh dan potensi kepemimpinan.</li>
-                                            <li class="mb-2">Melakukan penelitian untuk pengembangan ilmu dan teknologi demi meningkatkan kesejahteraan manusia.</li>
-                                            <li class="mb-2">Melakukan pengabdian kepada masyarakat sebagai penerapan ilmu dan teknologi yang telah dikembangkan dalam penelitian dan kesejahteraan manusia.</li>
-                                            <li class="mb-2">Memberikan perhatian dan mencari pemecahan terhadap berbagai masalah sosial budaya masyarakat melalui komunitas akademik.</li>
-                                            <li class="mb-2">Mengembangkan jaringan Kerjasama dengan berbagai institusi pendidikan, penelitian dan pengabdian lokal, nasional dan internasional untuk meningkatkan kualitas pendidikan dan penelitian.</li>
-                                            <li>Memperbaiki dan mengembangkan universitas secara terus menerus, sehingga dapat mendukung segala upaya untuk mencapai keunggulan.</li>
-                                        </ul>
+                                <?php elseif (!empty($row['gambar'])): ?>
+                                    <!-- Box GAMBAR -->
+                                    <div class="card shadow border-0 rounded-4 mb-5">
+                                        <div class="card-body p-5">
+                                            <div class="row align-items-center gx-5">
+                                                <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                                    <div class="bg-light p-4 rounded-4">
+                                                        <div class="text-primary fw-bolder mb-2"><?= $row['judul'] ?></div>
+                                                        <div class="small fw-bolder"><?= $row['judul_panjang'] ?></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="image-box-fill rounded-4 shadow-sm">
+                                                        <img src="assets/<?= $row['gambar'] ?>"
+                                                            alt="<?= $row['judul'] ?>"
+                                                            class="img-fluid" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                </div>
-                            </div>
-                        </div>
+                                <?php endif; ?>
+
+                            <?php endwhile; ?>
+
+                        <?php endwhile; ?>
                     </section>
-                    <!-- Divider-->
-                    <div class="pb-5"></div>
-                    <!-- Dosen Section-->
-                    <section>
-                        <!-- BOX Dosen-->
-                        <div class="card shadow border-0 rounded-4 mb-5">
-                            <div class="card-body p-5">
-                                <!--list dosen -->
-                                <div class="mb-5">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-person-fill"></i></i></div>
-                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">DOSEN</span></h3>
-                                    </div>
-                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                        <div class="col mb-4 mb-md-0">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">SEO/SEM Marketing</div>
-                                        </div>
-                                        <div class="col mb-4 mb-md-0">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Statistical Analysis</div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Web Development</div>
-                                        </div>
-                                    </div>
-                                    <div class="row row-cols-1 row-cols-md-3">
-                                        <div class="col mb-4 mb-md-0">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Network Security</div>
-                                        </div>
-                                        <div class="col mb-4 mb-md-0">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Adobe Software Suite</div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">User Interface Design</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--list dosen lainnya-->
-                                <div class="mb-0">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-person-fill"></i></div>
-                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">DOSEN LAINNYA</span></h3>
-                                    </div>
-                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                        <div class="col mb-4 mb-md-0">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">HTML</div>
-                                        </div>
-                                        <div class="col mb-4 mb-md-0">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">CSS</div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JavaScript</div>
-                                        </div>
-                                    </div>
-                                    <div class="row row-cols-1 row-cols-md-3">
-                                        <div class="col mb-4 mb-md-0">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</div>
-                                        </div>
-                                        <div class="col mb-4 mb-md-0">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Ruby</div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Node.js</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+
                 </div>
             </div>
         </div>
