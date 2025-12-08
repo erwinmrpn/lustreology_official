@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 08, 2025 at 11:10 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: localhost
+-- Waktu pembuatan: 08 Des 2025 pada 15.42
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `about_us`
+-- Struktur dari tabel `about_us`
 --
 
 CREATE TABLE `about_us` (
@@ -37,21 +37,24 @@ CREATE TABLE `about_us` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `about_us`
+-- Dumping data untuk tabel `about_us`
 --
 
 INSERT INTO `about_us` (`id`, `id_kategori`, `judul`, `judul_panjang`, `deskripsi`, `gambar`) VALUES
-(2, 1, 'SIEGA', 'Sistem Informasi E-Commerce Game Technology AKSI', 'SIEGA merupakan sebuah singkatan dari beberapa konsentrasi yang ada di Program Studi Sistem Informasi Unika Soegijapranata Semarang yaitu, Sistem Informasi, E-Commerce, Game Technology, dan Akuntansi + Sistem Informasi.\r\n\r\nSIEGA berdiri sejak 11 November 2011 yang didirikan oleh Prof. Dr. Ridwan Sanjaya S.E., S.Kom., MS.IEC. Program Studi Sistem Informasi mendapatkan ijin penyelenggaraan serta akreditasinya melalui SK Menteri Pendidikan dan Kebudayaan RI No. 235/E/O/2013 pada tanggal 25 Juni 2013 dengan akreditasi pertama yaitu C.', NULL),
+(2, 1, 'SIEGA', 'Sistem Informasi, E-Commerce, Game Technology, AKSI', 'SIEGA merupakan sebuah singkatan dari beberapa konsentrasi yang ada di Program Studi Sistem Informasi Unika Soegijapranata Semarang yaitu, Sistem Informasi, E-Commerce, Game Technology, dan Akuntansi + Sistem Informasi.\r\n\r\nSIEGA berdiri sejak 11 November 2011 yang didirikan oleh Prof. Dr. Ridwan Sanjaya S.E., S.Kom., MS.IEC. Program Studi Sistem Informasi mendapatkan ijin penyelenggaraan serta akreditasinya melalui SK Menteri Pendidikan dan Kebudayaan RI No. 235/E/O/2013 pada tanggal 25 Juni 2013 dengan akreditasi pertama yaitu C.', NULL),
 (4, 1, 'AKREDITASI', 'Sistem Informasi E-Commerce Game Technology AKSI', NULL, 0x313736353039303035335f736572746966696b61745f616b72656469746173692e706e67),
 (5, 1, 'testing', 'testing testing', 'asdjasdasdasdasd', NULL),
-(6, 4, 'Brenda', 'kaprodi', NULL, 0x313736353138373535355f4c4c5842524e7e312e504e47),
 (7, 3, 'VISI', '', 'Menjadi komunitas akademik yang unggul dalam pendidikan, penelitian dan pengabdian dengan dilandasi nilai-nilai Kristiani: cinta kasih, keadilan dan kejujuran', NULL),
-(8, 3, 'MISI', '', '- Menyelenggarakan pendidikan yang berkualitas secara akademik dengan didukung pengembangan kepribadian yang utuh dan potensi kepemimpinan.\r\n- Melakukan penelitian untuk pengembangan ilmu dan teknologi demi meningkatkan kesejahteraan manusia.\r\n- Melakukan pengabdian kepada masyarakat sebagai penerapan ilmu dan teknologi yang telah dikembangkan dalam penelitian dan kesejahteraan manusia.\r\n- Memberikan perhatian dan mencari pemecahan terhadap berbagai masalah sosial budaya masyarakat melalui komunitas akademik.\r\n- Mengembangkan jaringan Kerjasama dengan berbagai institusi pendidikan, penelitian dan pengabdian lokal, nasional dan internasional untuk meningkatkan kualitas pendidikan dan penelitian.\r\n- Memperbaiki dan mengembangkan universitas secara terus menerus, sehingga dapat mendukung segala upaya untuk mencapai keunggulan.', NULL);
+(8, 3, 'MISI', '', '- Menyelenggarakan pendidikan yang berkualitas secara akademik dengan didukung pengembangan kepribadian yang utuh dan potensi kepemimpinan.\r\n- Melakukan penelitian untuk pengembangan ilmu dan teknologi demi meningkatkan kesejahteraan manusia.\r\n- Melakukan pengabdian kepada masyarakat sebagai penerapan ilmu dan teknologi yang telah dikembangkan dalam penelitian dan kesejahteraan manusia.\r\n- Memberikan perhatian dan mencari pemecahan terhadap berbagai masalah sosial budaya masyarakat melalui komunitas akademik.\r\n- Mengembangkan jaringan Kerjasama dengan berbagai institusi pendidikan, penelitian dan pengabdian lokal, nasional dan internasional untuk meningkatkan kualitas pendidikan dan penelitian.\r\n- Memperbaiki dan mengembangkan universitas secara terus menerus, sehingga dapat mendukung segala upaya untuk mencapai keunggulan.', NULL),
+(11, 4, 'Prof. Dr. Ridwan Sanjaya S.E., S.Kom., MS.IEC.', 'Dekan Fakultas Ilmu Komputer', NULL, 0x313736353230333635325f53637265656e73686f7420323032352d31322d30382061742032302e35382e31392d6d696e2e706e67),
+(12, 4, 'Prof. Dr. Ridwan Sanjaya S.E., S.Kom., MS.IEC.', 'Sistem Informasi, E-Commerce, Game Technology, AKSI', NULL, 0x313736353230333934385f53637265656e73686f7420323032352d31322d30382061742032302e35382e31392e706e67),
+(13, 4, 'SIEGA', 'Dekan Fakultas Ilmu Komputer', NULL, 0x313736353230343030385f53637265656e73686f7420323032352d31322d30382061742032302e35382e31392d6d696e2e706e67),
+(17, 3, 'tes gambar', 'tes', NULL, 0x313736353230343731395f72696477616e2e706e67);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_messages`
+-- Struktur dari tabel `contact_messages`
 --
 
 CREATE TABLE `contact_messages` (
@@ -64,7 +67,7 @@ CREATE TABLE `contact_messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `contact_messages`
+-- Dumping data untuk tabel `contact_messages`
 --
 
 INSERT INTO `contact_messages` (`id`, `fullname`, `email`, `phone`, `message`, `created_at`) VALUES
@@ -76,7 +79,7 @@ INSERT INTO `contact_messages` (`id`, `fullname`, `email`, `phone`, `message`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel_kategori_about_us`
+-- Struktur dari tabel `tabel_kategori_about_us`
 --
 
 CREATE TABLE `tabel_kategori_about_us` (
@@ -86,7 +89,7 @@ CREATE TABLE `tabel_kategori_about_us` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tabel_kategori_about_us`
+-- Dumping data untuk tabel `tabel_kategori_about_us`
 --
 
 INSERT INTO `tabel_kategori_about_us` (`id_kategori`, `kategori`, `time_stamp`) VALUES
@@ -97,7 +100,7 @@ INSERT INTO `tabel_kategori_about_us` (`id_kategori`, `kategori`, `time_stamp`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -109,7 +112,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `role`, `timestamp`) VALUES
@@ -120,53 +123,53 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `role`, `timestamp`) VALU
 --
 
 --
--- Indexes for table `about_us`
+-- Indeks untuk tabel `about_us`
 --
 ALTER TABLE `about_us`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contact_messages`
+-- Indeks untuk tabel `contact_messages`
 --
 ALTER TABLE `contact_messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tabel_kategori_about_us`
+-- Indeks untuk tabel `tabel_kategori_about_us`
 --
 ALTER TABLE `tabel_kategori_about_us`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `about_us`
+-- AUTO_INCREMENT untuk tabel `about_us`
 --
 ALTER TABLE `about_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `contact_messages`
+-- AUTO_INCREMENT untuk tabel `contact_messages`
 --
 ALTER TABLE `contact_messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tabel_kategori_about_us`
+-- AUTO_INCREMENT untuk tabel `tabel_kategori_about_us`
 --
 ALTER TABLE `tabel_kategori_about_us`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
