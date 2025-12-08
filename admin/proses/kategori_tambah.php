@@ -10,4 +10,3 @@ mysqli_query($conn, $query);
 
 header("Location: ../about_us.php?status=kategori_added");
 exit();
-?>

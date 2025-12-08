@@ -4,6 +4,7 @@ include "proses/koneksi.php";
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,13 +31,20 @@ include "proses/koneksi.php";
             background: #ffffff;
             padding: 40px 35px;
             border-radius: 14px;
-            box-shadow: 0 7px 30px rgba(0,0,0,0.35);
+            box-shadow: 0 7px 30px rgba(0, 0, 0, 0.35);
             animation: fadeIn .8s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .title {
@@ -46,6 +54,7 @@ include "proses/koneksi.php";
             font-weight: 700;
             color: var(--dark);
         }
+
         .title span {
             color: var(--primary);
         }
@@ -74,7 +83,7 @@ include "proses/koneksi.php";
         .input-group input:focus {
             border-color: var(--primary);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(0,255,255,0.25);
+            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.25);
         }
 
         .btn-login {
@@ -103,10 +112,11 @@ include "proses/koneksi.php";
         }
     </style>
 </head>
+
 <body>
     <div class="login-box">
         <h2 class="title">SIEGA <span>Admin</span> Login</h2>
-        
+
         <form action="proses/admin_proses_login.php" method="POST">
             <div class="input-group">
                 <label>Username</label>
@@ -126,4 +136,5 @@ include "proses/koneksi.php";
         </div>
     </div>
 </body>
+
 </html>
