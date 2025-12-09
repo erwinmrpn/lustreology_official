@@ -9,7 +9,7 @@ include "proses/koneksi.php";
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - Admin Panel</title>
+    <title>About Us - Evan Santoso Panel</title>
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -332,91 +332,31 @@ include "proses/koneksi.php";
     </div>
 
     <div class="content">
-        <div class="card">
-            <h3>About Us Overview</h3>
-            <p class="lead">Selamat datang di About Us admin. Gunakan menu di samping untuk mengelola konten website.</p>
-        </div>
+       
+
+    
 
         <div class="card" style="padding:18px;">
-            <h3 style="margin-bottom:12px;">Kelola Kategori About Us</h3>
+            <h3>Tambah Blog</h3>
 
-            <!-- FORM TAMBAH KATEGORI -->
-            <form action="proses/kategori_tambah.php" method="POST" style="margin-bottom:18px;">
-                <label>Tambah Kategori Baru</label>
-                <input type="text" name="kategori" required placeholder="Contoh: Sejarah SIEGA, Akreditasi, Visi Misi...">
-                <div style="margin-top:12px;">
-                    <button type="submit" class="btn btn-primary">Tambah Kategori</button>
-                </div>
-            </form>
+            <form action="proses/blog_tambah.php" method="POST" enctype="multipart/form-data" style="margin-top:12px;">
+                
+        
 
-            <!-- TABEL KATEGORI -->
-            <div style="overflow:auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width:8%;">ID</th>
-                            <th>Nama Kategori</th>
-                            <th style="width:22%;">Waktu Dibuat</th>
-                            <th style="width:18%;">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $kategori = mysqli_query($conn, "SELECT * FROM tabel_kategori_about_us ORDER BY id_kategori DESC");
-                        while ($k = mysqli_fetch_assoc($kategori)) {
-                        ?>
-                            <tr>
-                                <td><?= $k['id_kategori'] ?></td>
-                                <td><?= $k['kategori'] ?></td>
-                                <td><?= $k['time_stamp'] ?></td>
-                                <td>
-                                    <div class="td-aksi">
-                                        <a href="proses/kategori_hapus.php?id=<?= $k['id_kategori'] ?>"
-                                           onclick="return confirm('Yakin ingin menghapus kategori ini? \nSemua data About Us yang memakai kategori ini akan hilang!')"
-                                           class="del">Hapus</a>
-                                    </div>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="card" style="padding:18px;">
-            <h3>Tambah About Us</h3>
-
-            <form action="proses/aboutus_tambah.php" method="POST" enctype="multipart/form-data" style="margin-top:12px;">
-                <label>Pilih Jenis Konten</label>
-                <select id="modeInput" name="mode" required>
-                    <option value="">-- Pilih Mode --</option>
-                    <option value="deskripsi">Deskripsi Saja</option>
-                    <option value="gambar">Dengan Gambar</option>
-                </select>
-
-                <label style="margin-top:12px;">Kategori</label>
-                <select name="id_kategori" required>
-                    <option value="">-- Pilih Kategori --</option>
-                    <?php
-                    $kat = mysqli_query($conn, "SELECT * FROM tabel_kategori_about_us");
-                    while ($k = mysqli_fetch_assoc($kat)) {
-                        echo "<option value='{$k['id_kategori']}'>{$k['kategori']}</option>";
-                    }
-                    ?>
-                </select>
+                
 
                 <label style="margin-top:12px;">Judul</label>
                 <input type="text" name="judul" required>
 
-                <label style="margin-top:12px;">Sub Judul</label>
-                <input type="text" name="judul_panjang">
+                <label style="margin-top:12px;">Deskripsi Singkat</label>
+                <input type="text" name="deskripsi_singkat">
 
-                <div id="inputDeskripsi" style="display:none; margin-top:12px;">
-                    <label>Deskripsi</label>
-                    <textarea name="deskripsi" rows="6"></textarea>
+                <div style="margin-top:12px;">
+                    <label>Deskripsi Panjang</label>
+                    <textarea name="deskripsi_panjang" rows="6"></textarea>
                 </div>
 
-                <div id="inputGambar" style="display:none; margin-top:12px;">
+                <div id="inputGambar" style="margin-top:12px;">
                     <label>Gambar</label>
                     <input type="file" name="gambar">
                 </div>
@@ -428,68 +368,40 @@ include "proses/koneksi.php";
         </div>
 
         <div class="card" style="padding:16px;">
-            <h3>Daftar About Us</h3>
+            <h3>Daftar Blog</h3>
 
             <!-- FILTER KATEGORI -->
-<form method="GET" style="margin-bottom:16px; display:flex; gap:12px; align-items:center;">
-    <label style="margin:0;">Filter Kategori:</label>
-    
-    <select name="filter_kategori" style="width:220px;">
-        <option value="">Semua Kategori</option>
 
-        <?php
-        $katFilter = mysqli_query($conn, "SELECT * FROM tabel_kategori_about_us");
-        while ($kf = mysqli_fetch_assoc($katFilter)) {
-            $selected = (isset($_GET['filter_kategori']) && $_GET['filter_kategori'] == $kf['id_kategori']) ? "selected" : "";
-            echo "<option value='{$kf['id_kategori']}' $selected>{$kf['kategori']}</option>";
-        }
-        ?>
-    </select>
-
-    <button type="submit" class="btn btn-primary">Terapkan</button>
-
-    <?php if (isset($_GET['filter_kategori']) && $_GET['filter_kategori'] != "") { ?>
-        <a href="about_us.php" class="btn btn-danger">Reset</a>
-    <?php } ?>
-</form>
 
             <div style="overflow:auto; margin-top:12px;">
                 <table>
                     <thead>
                         <tr>
                             <th style="width:6%;">ID</th>
-                            <th style="width:12%;">Kategori</th>
-                            <th>Judul</th>
-                            <th>Sub Judul</th>
-                            <th>Deskripsi</th>
+                            <th style="width:12%;">Judul</th>
+                            <th>Deskripsi Singkat</th>
+                            <th>Deskripsi Lengkap</th>
                             <th style="width:12%;">Gambar</th>
                             <th style="width:14%;">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $query = "SELECT *
-                          FROM about_us 
-                          LEFT JOIN tabel_kategori_about_us 
-                          ON about_us.id_kategori = tabel_kategori_about_us.id_kategori";
+                        $query = "SELECT *FROM blog";
 
-                        if (isset($_GET['filter_kategori']) && $_GET['filter_kategori'] != "") {
-                            $filter = $_GET['filter_kategori'];
-                            $query .= " WHERE about_us.id_kategori = '$filter'";
-                        }
+                        
 
-                        $query .= " ORDER BY about_us.id DESC";
+             
 
                         $result = mysqli_query($conn, $query);
 
                         while ($row = mysqli_fetch_assoc($result)) {
                         ?>
                             <tr>
-                                <td><?= $row['id'] ?></td>
-                                <td><?= $row['kategori'] ?></td>
+                                <td><?= $row['id_blog'] ?></td>
                                 <td><?= $row['judul'] ?></td>
-                                <td><?= $row['judul_panjang'] ?></td>
-                                <td style="max-width:300px; white-space:pre-wrap;"><?= $row['deskripsi'] ?></td>
+                                <td><?= $row['deskripsi_singkat'] ?></td>
+                                <td><?= $row['deskripsi_lengkap'] ?></td>
 
                                 <td>
                                     <?php if (!empty($row['gambar'])) { ?>
@@ -500,8 +412,8 @@ include "proses/koneksi.php";
                                 </td>
 
                                 <td class="td-aksi">
-                                    <a href="aboutus_edit.php?id=<?= $row['id'] ?>" class="edit">Edit</a>
-                                    <a href="proses/aboutus_hapus.php?id=<?= $row['id'] ?>" onclick="return confirm('Yakin ingin menghapus?')" class="del">Hapus</a>
+                                    <a href="blog_edit.php?id=<?= $row['id_blog'] ?>" class="edit">Edit</a>
+                                    <a href="proses/blog_hapus.php?id=<?= $row['id_blog'] ?>" onclick="return confirm('Yakin ingin menghapus?')" class="del">Hapus</a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -512,31 +424,7 @@ include "proses/koneksi.php";
 
     </div>
 
-    <!-- JAVASCRIPT -->
-    <script>
-        document.getElementById("modeInput").addEventListener("change", function() {
-
-            let mode = this.value;
-
-            let deskripsi = document.getElementById("inputDeskripsi");
-            let gambar = document.getElementById("inputGambar");
-
-            // Reset semua dulu
-            deskripsi.style.display = "none";
-            gambar.style.display = "none";
-
-            // Atur berdasarkan pilihan
-            if (mode === "deskripsi") {
-                deskripsi.style.display = "block";
-            } else if (mode === "gambar") {
-                gambar.style.display = "block";
-            } else if (mode === "keduanya") {
-                deskripsi.style.display = "block";
-                gambar.style.display = "block";
-            }
-        });
-    </script>
-
+  
 </body>
 
 </html>

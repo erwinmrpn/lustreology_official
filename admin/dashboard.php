@@ -1,6 +1,10 @@
 <?php
 include "proses/session.php";
 include "proses/koneksi.php";
+
+$data1 = mysqli_query($conn,"SELECT * from user where id_user = '$_SESSION[admin_login]'");
+$row1 = mysqli_fetch_array($data1);
+
 ?>
 
 <!DOCTYPE html>
@@ -385,9 +389,10 @@ include "proses/koneksi.php";
                 <input type="text" placeholder="Cari pesan, pengguna, atau menu..." />
             </div>
 
+            
             <div class="profile">
                 <div style="text-align:right;">
-                    <div style="font-weight:700">Halo, Admin</div>
+                    <div style="font-weight:700">Halo, <?php echo $row1['username'];?></div>
                     <div style="font-size:12px;color:var(--muted);margin-top:2px">Selamat datang kembali</div>
                 </div>
                 <div class="avatar">A</div>

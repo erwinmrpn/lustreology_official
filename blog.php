@@ -1,3 +1,6 @@
+<?php
+include "admin/proses/koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,73 +30,72 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
                         
+                        <?php
+                       
+
+                        $query = mysqli_query($conn, "SELECT * FROM blog ORDER BY timestamp DESC");
+
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            $id     = $row['id_blog'];
+                            $judul  = $row['judul'];
+                            $short  = $row['deskripsi_singkat'];
+                            $long   = $row['deskripsi_lengkap'];
+
+                            // Jika gambar blob → kosong
+                            // Jika sudah varchar → gunakan path sesuai lokasi penyimpanan
+                            $gambar = (!empty($row['gambar'])) ? "assets/" . $row['gambar'] : "https://dummyimage.com/300x400/343a40/6c757d";
+                        ?>
+                            
                         <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                             <div class="card-body p-0">
-                                <div class="d-flex align-items-center flex-column flex-md-row"> 
+
+                                <div class="d-flex align-items-center flex-column flex-md-row">
                                     
+                                    <!-- TEKS -->
                                     <div class="p-5 flex-grow-1">
-                                        <h2 class="fw-bolder">Artikel Pertama: Pengantar Teknologi Baru</h2>
+                                        <h2 class="fw-bolder"><?= $judul ?></h2>
                                         
                                         <p style="max-height: 4.5em; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius at enim eum illum aperiam placeat esse? Mollitia omnis minima saepe recusandae libero, iste ad asperiores! Explicabo commodi quo itaque! Ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius at enim eum illum aperiam placeat esse? Mollitia omnis minima saepe recusandae libero, iste ad asperiores! Explicabo commodi quo itaque! Ipsam!
+                                            <?= nl2br($short) ?>
                                         </p>
-                                        
-                                        <div class="text-center d-md-none mb-3"> 
-                                            <img class="img-fluid rounded-3" src="https://dummyimage.com/300x200/343a40/6c757d" alt="Gambar Artikel 1" />
+
+                                        <!-- Gambar muncul di HP -->
+                                        <div class="text-center d-md-none mb-3">
+                                            <img class="img-fluid rounded-3" src="<?= $gambar ?>" alt="gambar" />
                                         </div>
-                                        
+
                                         <p class="mt-3 mb-0">
-                                            <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard1" aria-expanded="false" aria-controls="collapseCard1">
+                                            <button class="btn btn-primary btn-sm"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseCard<?= $id ?>"
+                                                    aria-expanded="false"
+                                                    aria-controls="collapseCard<?= $id ?>">
                                                 Baca Lebih Lanjut
                                             </button>
                                         </p>
                                     </div>
-                                    
-                                    <img class="img-fluid rounded-end d-none d-md-block" src="https://dummyimage.com/300x400/343a40/6c757d" alt="Gambar Artikel 1" style="width: 300px; height: 100%; object-fit: cover;" />
+
+                                    <!-- Gambar muncul di desktop -->
+                                    <img class="img-fluid rounded-end d-none d-md-block"
+                                        src="<?= $gambar ?>"
+                                        alt="gambar"
+                                        style="width: 300px; height: 100%; object-fit: cover;" />
                                 </div>
 
-                                <div class="collapse" id="collapseCard1">
+                                <!-- COLLAPSE -->
+                                <div class="collapse" id="collapseCard<?= $id ?>">
                                     <div class="p-5 pt-0 border-top">
                                         <h4 class="fw-bolder">Deskripsi Lengkap:</h4>
-                                        <p>Ini adalah tempat untuk teks deskriptif yang sangat panjang. Anda bisa memasukkan seluruh konten artikel di sini. Ketika pengguna mengklik "Baca Lebih Lanjut", bagian ini akan muncul secara dramatis di bawah pratinjau gambar dan teks pendek.</p>
-                                        <p> SIEGA merupakan sebuah singkatan dari beberapa konsentrasi yang ada di Program Studi Sistem Informasi Unika Soegijapranata Semarang yaitu, Sistem Informasi, E-Commerce, Game Technology, dan Akuntansi + Sistem Informasi. SIEGA berdiri sejak 11 November 2011 yang didirikan oleh Prof. Dr. Ridwan Sanjaya S.E., S.Kom., MS.IEC. Program Studi Sistem Informasi mendapatkan ijin penyelenggaraan serta akreditasinya melalui SK Menteri Pendidikan dan Kebudayaan RI No. 235/E/O/2013 pada tanggal 25 Juni 2013 dengan akreditasi pertama yaitu C. </p>
+                                        <p><?= nl2br($long) ?></p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                            <div class="card-body p-0">
-                                <div class="d-flex align-items-center flex-column flex-md-row"> 
-                                    
-                                    <div class="p-5 flex-grow-1">
-                                        <h2 class="fw-bolder">Artikel Kedua: Membangun E-Commerce Aman</h2>
-                                        
-                                        <p style="max-height: 4.5em; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
-                                            Ini adalah pratinjau singkat dari artikel kedua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                                        </p>
-                                        
-                                        <div class="text-center d-md-none mb-3"> 
-                                            <img class="img-fluid rounded-3" src="https://dummyimage.com/300x200/343a40/6c757d" alt="Gambar Artikel 2" />
-                                        </div>
-                                        
-                                        <p class="mt-3 mb-0">
-                                            <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard2" aria-expanded="false" aria-controls="collapseCard2">
-                                                Baca Lebih Lanjut
-                                            </button>
-                                        </p>
-                                    </div>
-                                    
-                                    <img class="img-fluid rounded-end d-none d-md-block" src="https://dummyimage.com/300x400/343a40/6c757d" alt="Gambar Artikel 2" style="width: 300px; height: 100%; object-fit: cover;" />
                                 </div>
 
-                                <div class="collapse" id="collapseCard2">
-                                    <div class="p-5 pt-0 border-top">
-                                        <h4 class="fw-bolder">Deskripsi Lengkap:</h4>
-                                        <p>Ini adalah teks lengkap untuk artikel kedua. Eius at enim eum illum aperiam placeat esse? Mollitia omnis minima saepe recusandae libero, iste ad asperiores! Explicabo commodi quo itaque! Ipsam! Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+
+                        <?php } ?>
+                        
                         </div>
                 </div>
             </div>
