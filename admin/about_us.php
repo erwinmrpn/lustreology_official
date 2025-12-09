@@ -430,6 +430,29 @@ include "proses/koneksi.php";
         <div class="card" style="padding:16px;">
             <h3>Daftar About Us</h3>
 
+            <!-- FILTER KATEGORI -->
+<form method="GET" style="margin-bottom:16px; display:flex; gap:12px; align-items:center;">
+    <label style="margin:0;">Filter Kategori:</label>
+    
+    <select name="filter_kategori" style="width:220px;">
+        <option value="">Semua Kategori</option>
+
+        <?php
+        $katFilter = mysqli_query($conn, "SELECT * FROM tabel_kategori_about_us");
+        while ($kf = mysqli_fetch_assoc($katFilter)) {
+            $selected = (isset($_GET['filter_kategori']) && $_GET['filter_kategori'] == $kf['id_kategori']) ? "selected" : "";
+            echo "<option value='{$kf['id_kategori']}' $selected>{$kf['kategori']}</option>";
+        }
+        ?>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Terapkan</button>
+
+    <?php if (isset($_GET['filter_kategori']) && $_GET['filter_kategori'] != "") { ?>
+        <a href="about_us.php" class="btn btn-danger">Reset</a>
+    <?php } ?>
+</form>
+
             <div style="overflow:auto; margin-top:12px;">
                 <table>
                     <thead>
@@ -449,6 +472,13 @@ include "proses/koneksi.php";
                           FROM about_us 
                           LEFT JOIN tabel_kategori_about_us 
                           ON about_us.id_kategori = tabel_kategori_about_us.id_kategori";
+
+                        if (isset($_GET['filter_kategori']) && $_GET['filter_kategori'] != "") {
+                            $filter = $_GET['filter_kategori'];
+                            $query .= " WHERE about_us.id_kategori = '$filter'";
+                        }
+
+                        $query .= " ORDER BY about_us.id DESC";
 
                         $result = mysqli_query($conn, $query);
 
