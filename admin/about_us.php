@@ -116,7 +116,6 @@ include "proses/koneksi.php";
             margin:6px 0;
         }
 
-        /* If nav_admin uses plain <a> tags without wrapper, also cover direct anchors */
         .sidebar a {
             color: rgba(255,255,255,0.92);
             text-decoration: none;
