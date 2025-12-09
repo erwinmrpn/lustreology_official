@@ -111,7 +111,7 @@ $kategori  = mysqli_query($conn, "
                         <?php endwhile; ?>
                     </section>
 
-                <!-- Tampilan Google Maps-->
+                 <!-- Tampilan Google Maps-->
                  </div>
                     </div>
                         <div class="text-center mb-4 mt-5">
@@ -140,7 +140,7 @@ $kategori  = mysqli_query($conn, "
                                 </div>
                             </div>
 
-                </div>
+                    </div>
             </div>
         </div>
     </main>

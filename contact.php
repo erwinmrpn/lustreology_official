@@ -97,15 +97,43 @@
                 </div>
             </div>
         </section>
+        <!-- Tampilan Google Maps-->
+                 </div>
+                    </div>
+                        <div class="text-center mb-4 mt-5">
+                            <h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline">Lokasi Kami</span></h2>
+                            <p class="lead fw-normal text-muted mb-4">Gedung Henricus Constant Lantai 8, Kampus Unika Soegijapranata Bendan Duwur, Semarang.</p>
+                        </div>
+
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-11 col-xl-9 col-xxl-8">
+                                <div class="card shadow border-0 rounded-4 mb-5 p-0">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.5319947977087!2d110.40525639999999!3d-7.026094399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b9845c9acc3%3A0xaa82f4dab3bcca0e!2sUnika%20Soegijapranata!5e0!3m2!1sid!2sid!4v1733680420000!5m2!1sid!2sid"
+                                            height="450" 
+                                            style="border:0;" 
+                                            allowfullscreen="" 
+                                            loading="lazy" 
+                                            referrerpolicy="no-referrer-when-downgrade"
+                                            class="rounded-4">
+                                        </iframe>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <p class="small text-muted">Jl. Pawiyatan Luhur Sel. IV No.1, Bendan Duwur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50234</p>
+                                    <a href="https://maps.app.goo.gl/WE9JXA72nzwSLRmd6" target="_blank" class="btn btn-outline-primary btn-lg px-5 py-3 fs-6 fw-bolder mb-5">Lihat di Google Maps</a>
+                                </div>
+                            </div>
+
+                    </div>
         <!-- About Section-->
         <section class="bg-light py-5">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-xxl-8">
                         <div class="text-center my-5">
-                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About SIEGA</span></h2>
-                            <p class="lead fw-light mb-4">Tempat dimana inovasi masa depan tumbuh dan berkembang.</p>
-                            <p class="text-muted">Mulai perjalananmu di dunia digital bersama SIEGA dan jadilah bagian dari generasi inovator berikutnya. Tumbuh jadi pribadi yang berpikir kreatif, berani mencoba, dan terus berkembang untuk menciptakan inovasi. SIEGA siap mendampingi setiap langkahmu menuju kesuksesan.</p>
+                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Kunjungi Media Sosial SIEGA</span></h2>
                             <div class="d-flex justify-content-center fs-2 gap-4">
                                   <a class="btn btn-link fs-2 text-gradient" href="https://www.instagram.com/siega_unika/" target="_blank">
                                         <i class="bi bi-instagram"></i>
