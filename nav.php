@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-cb py-3">
     <div class="container px-5">
 
         <!-- Brand + Logo -->
@@ -31,8 +31,13 @@
     </div>
 </nav>
 
-<!-- CSS Animasi -->
+<!-- CSS Custom -->
 <style>
+/* Warna background navbar */
+.bg-cb {
+    background-color: #F9F8F6 !important;
+}
+
 /* Hover efek smooth */
 .nav-anim-link {
     position: relative;
@@ -58,7 +63,6 @@
     pointer-events: none;
 }
 
-/* Mobile Button Styling */
 .nav-anim-btn {
     position: relative;
     overflow: hidden;
