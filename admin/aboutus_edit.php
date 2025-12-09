@@ -297,8 +297,8 @@ if (!empty($data['deskripsi']) && empty($data['gambar'])) {
 
                 <label>Pilih Jenis Konten</label>
                 <select id="modeInput" name="mode" required>
-                    <option value="deskripsi" <?= ($mode == "deskripsi" ? "selected" : "") ?>>Hanya Deskripsi</option>
-                    <option value="gambar" <?= ($mode == "gambar" ? "selected" : "") ?>>Hanya Gambar</option>
+                    <option value="deskripsi" <?= ($mode == "deskripsi" ? "selected" : "") ?>>Deskripsi Saja</option>
+                    <option value="gambar" <?= ($mode == "gambar" ? "selected" : "") ?>>Dengan Gambar</option>
                 </select>
 
                 <label>Kategori</label>
