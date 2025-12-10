@@ -19,7 +19,7 @@ if (!empty($_FILES['gambar']['name'])) {
     $extFile  = strtolower(pathinfo($namaFile, PATHINFO_EXTENSION));
 
     if (!in_array($extFile, $extValid)) {
-        echo "<script>alert('Format gambar tidak valid!'); window.location='../blog_tambah.php';</script>";
+        echo "<script>alert('Format gambar tidak valid!'); window.location='../blog.php';</script>";
         exit();
     }
 
@@ -30,7 +30,7 @@ if (!empty($_FILES['gambar']['name'])) {
     $pathTujuan = "../../assets/" . $namaFileBaru;
 
     if (!move_uploaded_file($tmpName, $pathTujuan)) {
-        echo "<script>alert('Upload gambar gagal!'); window.location='../blog_tambah.php';</script>";
+        echo "<script>alert('Upload gambar gagal!'); window.location='../blog.php';</script>";
         exit();
     }
 }
