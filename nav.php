@@ -3,9 +3,9 @@
 
         <!-- Brand + Logo -->
         <a class="navbar-brand d-flex align-items-center" href="index.php">
-            <img src="assets/logo_siega.png" alt="SIEGA Logo"
+            <img src="assets/new_logo.png" alt="lustreology Logo"
                  style="height: 80px; width: auto; margin-right: 10px;">
-            <span class="fw-bolder text-primary">SIEGA Unika Soegijapranata</span>
+            <span class="fw-bolder text-primary">Lustreology Official</span>
         </a>
 
         <!-- Mobile Toggle Button -->
