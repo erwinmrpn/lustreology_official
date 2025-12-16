@@ -35,7 +35,7 @@
                             <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
                                 <div class="text-uppercase">Parfum &middot; Deodorant &middot; Perawatan Muka &middot; Dan Lain-Lain </div>
                             </div>
-                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Distibutor Resmi Perawatan Diri</span></h1>
+                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Distributor Resmi Perawatan Diri</span></h1>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                                 <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="about_us.php">About Us</a>
                                 <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="blog.php">Catalog</a>
@@ -51,6 +51,207 @@
                 </div>
             </div>
         </header>
+
+        <section class="py-5 bg-white border-bottom">
+    <div class="container px-5">
+        
+        <div class="text-center mb-4">
+            <h2 class="fw-bolder text-secondary">CATEGORIES</h2>
+        </div>
+
+        <div class="position-relative px-4">
+            <button class="slider-btn slider-prev" id="scrollLeftBtn">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+
+            <div class="category-scroll-container" id="categoryWrapper">
+                
+                <div class="category-item">
+                    <div class="category-circle">
+                        <i class="bi bi-trophy"></i>
+                    </div>
+                    <div class="category-name">🏆 Produk Best Seller 🏆</div>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+                    <div class="category-name">🎉 Paket Bundle Hemat 🎉</div>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <i class="bi bi-stars"></i>
+                    </div>
+                    <div class="category-name">Perawatan Muka</div>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <i class="bi bi-emoji-smile"></i>
+                    </div>
+                    <div class="category-name">Sikat Gigi</div>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <i class="bi bi-droplet"></i>
+                    </div>
+                    <div class="category-name">Hair Spray</div>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <i class="bi bi-tag"></i>
+                    </div>
+                    <div class="category-name">Morris</div>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <i class="bi bi-wind"></i>
+                    </div>
+                    <div class="category-name">🌿 Deodorant Spray 🌿</div>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <i class="bi bi-gender-male"></i>
+                    </div>
+                    <div class="category-name">✨ Parfum Pria ✨</div>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <i class="bi bi-gender-female"></i>
+                    </div>
+                    <div class="category-name">💖 Parfum Wanita 💖</div>
+                </div>
+
+            </div>
+
+            <button class="slider-btn slider-next" id="scrollRightBtn">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const scrollContainer = document.getElementById('categoryWrapper');
+        const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+        const scrollRightBtn = document.getElementById('scrollRightBtn');
+
+        // Konfigurasi
+        const scrollAmount = 320; // Jarak geser (pixel)
+        const autoScrollSpeed = 3000; // Kecepatan otomatis (3 detik)
+        let autoScrollInterval;
+
+        // --- Fungsi Logika Geser ---
+        function scrollNext() {
+            if (!scrollContainer) return;
+            // Cek apakah sudah mentok kanan
+            const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+            // Jika sudah di ujung (toleransi 10px), balik ke awal (loop)
+            if (scrollContainer.scrollLeft >= maxScrollLeft - 10) {
+                scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        function scrollPrev() {
+            if (!scrollContainer) return;
+            scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        }
+
+        // --- Fungsi Auto Play ---
+        function startAutoScroll() {
+            clearInterval(autoScrollInterval); 
+            autoScrollInterval = setInterval(scrollNext, autoScrollSpeed);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        // --- Eksekusi ---
+        if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+            
+            // Event Klik Tombol
+            scrollLeftBtn.addEventListener('click', scrollPrev);
+            scrollRightBtn.addEventListener('click', scrollNext);
+
+            // Mulai Auto Scroll
+            startAutoScroll();
+
+            // Pause saat mouse di atas area (supaya user bisa klik)
+            scrollContainer.addEventListener('mouseenter', stopAutoScroll);
+            scrollLeftBtn.addEventListener('mouseenter', stopAutoScroll);
+            scrollRightBtn.addEventListener('mouseenter', stopAutoScroll);
+
+            // Lanjut jalan saat mouse pergi
+            scrollContainer.addEventListener('mouseleave', startAutoScroll);
+            scrollLeftBtn.addEventListener('mouseleave', startAutoScroll);
+            scrollRightBtn.addEventListener('mouseleave', startAutoScroll);
+            
+            // Support Touch (HP)
+            scrollContainer.addEventListener('touchstart', stopAutoScroll);
+            scrollContainer.addEventListener('touchend', startAutoScroll);
+        }
+    });
+    </script>
+</section>
+
+        <!-- Banner Section-->
+<section class="py-5 bg-white">
+    <div class="container px-5">
+        <div class="banner-wrapper">
+            <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner rounded-4 shadow-sm">
+                    
+                    <div class="carousel-item active">
+                        <div class="ratio-2x1">
+                            <img src="assets/banner1.jpg" class="d-block w-100" alt="Promo Banner 1" onerror="this.src='https://dummyimage.com/2000x1000/3572EF/fff&text=Banner+1+(2:1)'">
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="ratio-2x1">
+                            <img src="assets/banner2.jpg" class="d-block w-100" alt="Promo Banner 2" onerror="this.src='https://dummyimage.com/2000x1000/e21e80/fff&text=Banner+2+(2:1)'">
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="ratio-2x1">
+                            <img src="assets/banner3.jpg" class="d-block w-100" alt="Promo Banner 3" onerror="this.src='https://dummyimage.com/2000x1000/333/fff&text=Banner+3+(2:1)'">
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
         <!-- About Section-->
         <section class="bg-light py-5">
             <div class="container px-5">

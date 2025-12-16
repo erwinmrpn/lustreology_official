@@ -35,7 +35,7 @@
 <style>
 /* Warna background navbar */
 .bg-cb {
-    background-color: #F9F8F6 !important;
+    background-color: #FFA8A8  !important;
 }
 
 /* Hover efek smooth */
