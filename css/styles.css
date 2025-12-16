@@ -11987,3 +11987,19 @@ html {
     color: #07479b; /* Warna hitam pekat */
     line-height: 1;
 }
+
+/* =========================================
+   FIXED NAVBAR ADJUSTMENT
+   ========================================= */
+
+body {
+    /* Memberikan jarak atas agar konten tidak tertutup navbar */
+    /* Tinggi navbar Anda sekitar 110px (Logo 80px + Padding vertikal) */
+    padding-top: 115px; 
+}
+
+/* Opsional: Agar navbar sedikit transparan/blur saat di-scroll (Efek Modern) */
+.navbar.fixed-top {
+    background-color: rgba(249, 248, 246, 0.95) !important; /* Sesuaikan warna bg-cb */
+    backdrop-filter: blur(10px);
+}

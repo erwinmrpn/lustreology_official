@@ -17,7 +17,7 @@ $kategori  = mysqli_query($conn, "
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>About SIEGA</title>
+    <title>About Lustreology</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Custom Google font-->
@@ -42,7 +42,7 @@ $kategori  = mysqli_query($conn, "
         <!-- Page Content-->
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
-                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">About SIEGA</span></h1>
+                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">About Lustreology</span></h1>
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-11 col-xl-9 col-xxl-8">
@@ -152,7 +152,7 @@ $kategori  = mysqli_query($conn, "
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto">
-                    <div class="small m-0">Copyright &copy; UAS Manajemen Proyek Kelompok Richard, Erwin, dan Evan</div>
+                    <div class="small m-0">Copyright &copy; erwinmrpn</div>
                 </div>
             </div>
         </div>

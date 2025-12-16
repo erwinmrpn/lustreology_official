@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-cb py-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-cb py-3 fixed-top shadow-sm">
     <div class="container px-5">
 
         <!-- Brand + Logo -->

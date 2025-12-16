@@ -362,7 +362,7 @@
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto">
-                    <div class="small m-0">Copyright &copy; UAS Manajemen Proyek Kelompok Richard, Erwin, dan Evan</div>
+                    <div class="small m-0">Copyright &copy; erwinmrpn</div>
                 </div>
             </div>
         </div>
