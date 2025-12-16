@@ -303,32 +303,25 @@
         </div>
     </div>
 </section>
-        <!-- About Section-->
+         <!-- About Section-->
         <section class="bg-light py-5">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-xxl-8">
                         <div class="text-center my-5">
-                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About SIEGA</span></h2>
-                            <p class="lead fw-light mb-4">Tempat dimana inovasi masa depan tumbuh dan berkembang.</p>
-                            <p class="text-muted">Mulai perjalananmu di dunia digital bersama SIEGA dan jadilah bagian dari generasi inovator berikutnya. Tumbuh jadi pribadi yang berpikir kreatif, berani mencoba, dan terus berkembang untuk menciptakan inovasi. SIEGA siap mendampingi setiap langkahmu menuju kesuksesan.</p>
-                            <div class="d-flex justify-content-center fs-2 gap-4">
-                                  <a class="btn btn-link fs-2 text-gradient" href="https://www.instagram.com/siega_unika/" target="_blank">
-                                        <i class="bi bi-instagram"></i>
+                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Kunjungi Media Sosial Lustreology</span></h2>
+                            <div class="d-flex justify-content-center flex-wrap gap-4 mt-4">
+                                  <a class="btn btn-link fs-5 text-gradient text-decoration-none d-flex align-items-center" href="https://www.instagram.com/lustreology/" target="_blank">
+                                        <i class="bi bi-instagram me-2"></i> 
+                                        <span class="fw-bold">@lustreology</span>
                                   </a>
 
-                                  <a class="btn btn-link fs-2 text-gradient" href="https://web.facebook.com/siega.unika/?_rdc=1&_rdr#" target="_blank">
-                                        <i class="bi bi-facebook"></i>
-                                  </a>
-
-                                  <a class="btn btn-link fs-2 text-gradient" href="https://www.tiktok.com/@siega_unika?_t=8VGDxzLfXzG&_r=1" target="_blank">
-                                        <i class="bi bi-tiktok"></i>
-                                  </a>
-
-                                  <a class="btn btn-link fs-2 text-gradient" href="https://www.youtube.com/channel/UCziKWu1OJMar7oEqaeINdzw" target="_blank">
-                                        <i class="bi bi-youtube"></i>
+                                  <a class="btn btn-link fs-5 text-gradient text-decoration-none d-flex align-items-center" href="https://www.tiktok.com/@lustreologyofficial?_r=1&_t=ZS-92GzstYm50z" target="_blank">
+                                        <i class="bi bi-tiktok me-2"></i> 
+                                        <span class="fw-bold">@lustreologyofficial</span>
                                   </a>
                             </div>
+
                         </div>
                     </div>
                 </div>

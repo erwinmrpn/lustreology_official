@@ -106,11 +106,11 @@ include "admin/proses/koneksi.php";
         <section class="py-5 bg-gradient-primary-to-secondary text-white">
             <div class="container px-5 my-5">
                 <div class="text-center">
-                    <h2 class="display-5 fw-bolder mb-4">Dalam bahasa Spanyol, Siega artinya panen, kami mempercayai bahwa penguasaan teknologi informasi adalah keniscayaan.</h2>
+                    <h2 class="display-5 fw-bolder mb-4">Kami membuka peluang untuk anda yang ingin menjadi reseller!</h2>
                     
-                    <h3 class="display-6 fw-bolder mb-4">Mari bergabung bersama SIEGA Untuk Memanen Lebih Banyak Ilmu</h3>
+                    <h3 class="display-6 fw-bolder mb-4">Mari bergabung bersama reseller produk lustreology</h3>
                     
-                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.php">Join Us!</a>
+                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.php">Bergabung Sekarang!</a>
                 </div>
             </div>
         </section>

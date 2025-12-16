@@ -36,7 +36,7 @@
                     <div class="text-center mb-5">
                         <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
                         <h1 class="fw-bolder">Hubungi Kami</h1>
-                        <p class="lead fw-normal text-muted mb-0">Ayo bangun teknologi masa depan bersama!</p>
+                        <p class="lead fw-normal text-muted mb-0">Kami membuka peluang bisnis untuk anda yang ingin menjadi reseller dari produk Lustreology</p>
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
@@ -51,26 +51,26 @@
                                 <!-- Name input-->
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="name" name="fullname" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                    <label for="name">Full name</label>
+                                    <label for="name">Nama Lengkap</label>
                                     <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                 </div>
                                 <!-- Email address input-->
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                    <label for="email">Email address</label>
+                                    <label for="email">Alamat Email</label>
                                     <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                     <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                 </div>
                                 <!-- Phone number input-->
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                    <label for="phone">Phone number</label>
+                                    <label for="phone">Nomor Telfon</label>
                                     <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                                 </div>
                                 <!-- Message input-->
                                 <div class="form-floating mb-3">
                                     <textarea class="form-control" id="message" type="text" name="message" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Message</label>
+                                    <label for="message">Pesan</label>
                                     <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                                 </div>
                                 <!-- Submit success message-->
@@ -100,67 +100,33 @@
                 </div>
             </div>
         </section>
-        <!-- Tampilan Google Maps-->
-                 </div>
-                    </div>
-                        <div class="text-center mb-4 mt-5">
-                            <h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline">Lokasi Kami</span></h2>
-                            <p class="lead fw-normal text-muted mb-4">Gedung Henricus Constant Lantai 8, Kampus Unika Soegijapranata Bendan Duwur, Semarang.</p>
-                        </div>
-
-                        <div class="row gx-5 justify-content-center">
-                            <div class="col-lg-11 col-xl-9 col-xxl-8">
-                                <div class="card shadow border-0 rounded-4 mb-5 p-0">
-                                    <div class="ratio ratio-16x9">
-                                        <iframe 
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.5319947977087!2d110.40525639999999!3d-7.026094399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b9845c9acc3%3A0xaa82f4dab3bcca0e!2sUnika%20Soegijapranata!5e0!3m2!1sid!2sid!4v1733680420000!5m2!1sid!2sid"
-                                            height="450" 
-                                            style="border:0;" 
-                                            allowfullscreen="" 
-                                            loading="lazy" 
-                                            referrerpolicy="no-referrer-when-downgrade"
-                                            class="rounded-4">
-                                        </iframe>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <p class="small text-muted">Jl. Pawiyatan Luhur Sel. IV No.1, Bendan Duwur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50234</p>
-                                    <a href="https://maps.app.goo.gl/WE9JXA72nzwSLRmd6" target="_blank" class="btn btn-outline-primary btn-lg px-5 py-3 fs-6 fw-bolder mb-5">Lihat di Google Maps</a>
-                                </div>
-                            </div>
-
-                    </div>
+        
         <!-- About Section-->
         <section class="bg-light py-5">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-xxl-8">
                         <div class="text-center my-5">
-                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Kunjungi Media Sosial SIEGA</span></h2>
-                            <div class="d-flex justify-content-center fs-2 gap-4">
-                                  <a class="btn btn-link fs-2 text-gradient" href="https://www.instagram.com/siega_unika/" target="_blank">
-                                        <i class="bi bi-instagram"></i>
+                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Kunjungi Media Sosial Lustreology</span></h2>
+                            <div class="d-flex justify-content-center flex-wrap gap-4 mt-4">
+                                  <a class="btn btn-link fs-5 text-gradient text-decoration-none d-flex align-items-center" href="https://www.instagram.com/lustreology/" target="_blank">
+                                        <i class="bi bi-instagram me-2"></i> 
+                                        <span class="fw-bold">@lustreology</span>
                                   </a>
 
-                                  <a class="btn btn-link fs-2 text-gradient" href="https://web.facebook.com/siega.unika/?_rdc=1&_rdr#" target="_blank">
-                                        <i class="bi bi-facebook"></i>
-                                  </a>
-
-                                  <a class="btn btn-link fs-2 text-gradient" href="https://www.tiktok.com/@siega_unika?_t=8VGDxzLfXzG&_r=1" target="_blank">
-                                        <i class="bi bi-tiktok"></i>
-                                  </a>
-
-                                  <a class="btn btn-link fs-2 text-gradient" href="https://www.youtube.com/channel/UCziKWu1OJMar7oEqaeINdzw" target="_blank">
-                                        <i class="bi bi-youtube"></i>
+                                  <a class="btn btn-link fs-5 text-gradient text-decoration-none d-flex align-items-center" href="https://www.tiktok.com/@lustreologyofficial?_r=1&_t=ZS-92GzstYm50z" target="_blank">
+                                        <i class="bi bi-tiktok me-2"></i> 
+                                        <span class="fw-bold">@lustreologyofficial</span>
                                   </a>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <!-- Footer-->
+
     <!-- Footer-->
     <footer class="bg-white py-4 mt-auto">
         <div class="container px-5">
