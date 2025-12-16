@@ -23,7 +23,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                 <li class="nav-item"><a class="nav-link nav-anim-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link nav-anim-link" href="about_us.php">About Us</a></li>
-                <li class="nav-item"><a class="nav-link nav-anim-link" href="blog.php">Blog</a></li>
+                <li class="nav-item"><a class="nav-link nav-anim-link" href="blog.php">Catalog</a></li>
                 <li class="nav-item"><a class="nav-link nav-anim-link" href="contact.php">Contact</a></li>
             </ul>
         </div>
