@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>SIEGA Unika Soegijapranata</title>
+    <title>Lustreology Official</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Custom Google font-->
@@ -32,27 +32,18 @@
                     <div class="col-xxl-5">
                         <!-- Header text content-->
                         <div class="text-center text-xxl-start">
-                            <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-                                <div class="text-uppercase">Sistem Informasi &middot; E-Commerce &middot; Game Technology &middot; Aksi </div>
-                            </div>
-                            <div class="fs-3 fw-light text-muted">SIEGA adalah</div>
-                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Ruang tumbuh masa depan.</span></h1>
+                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Distibutor Resmi Perawatan Diri</span></h1>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                                 <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="about_us.php">About Us</a>
-                                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="blog.php">Blog</a>
+                                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="blog.php">Catalog</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xxl-7">
                         <!-- Header profile picture-->
                         <div class="d-flex justify-content-center mt-5 mt-xxl-0">
-                            <div class="profile bg-gradient-primary-to-secondary">
-                                <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
-                                <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                                <img class="profile-img" src="assets/new_logo.png" alt="..." />
-                                </div>
-                            </div>
-                        </div>
+                             <img class="img-fluid" src="assets/new_logo.png" alt="Lustreology Logo" style="max-width: 100%; height: auto;" />
+                       </div>
                     </div>
                 </div>
             </div>
