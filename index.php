@@ -17,6 +17,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&display=swap" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -52,6 +55,61 @@
             </div>
         </header>
 
+        <!-- Collection Section-->
+<section class="py-5 bg-light">
+            <div class="container px-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Kami Tersedia Di</h2>
+                    <p class="text-muted">Kunjungi toko resmi kami di platform kesayangan Anda</p>
+                </div>
+
+                <div class="row gx-4 gy-4 justify-content-center">
+                    
+                    <!-- Shopee-->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="marketplace-card">
+                            <img src="assets/shopee_logo.png" alt="Shopee">
+                            <div class="marketplace-overlay">
+                                <a href="https://shopee.co.id/lustreology?page=0" target="_blank" class="btn btn-light fw-bold px-4 py-2 marketplace-btn rounded-pill">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <!-- Lazada-->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="marketplace-card">
+                            <img src="assets/lazada_logo.png" alt="Lazada">
+                            <div class="marketplace-overlay">
+                                <a href="https://www.lazada.co.id/shop/lustreology/?spm=a2o4j.pdp_revamp.seller.1.44414fb3eMXgrE&itemId=8694362503&channelSource=pdp" target="_blank" class="btn btn-light fw-bold px-4 py-2 marketplace-btn rounded-pill">View More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Tiktok Shop-->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="marketplace-card">
+                            <img src="assets/tiktok_tokopedia_logo.png" alt="TikTok Shop">
+                            <div class="marketplace-overlay">
+                                <a href="https://www.tiktok.com/@lustreologyofficial?_r=1&_t=ZS-92GzstYm50z" target="_blank" class="btn btn-light fw-bold px-4 py-2 marketplace-btn rounded-pill">View More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toco-->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="marketplace-card">
+                            <img src="assets/toco_logo.png" alt="Lazada">
+                            <div class="marketplace-overlay">
+                                <a href="https://toco.id/store/lustreologyy" target="_blank" class="btn btn-light fw-bold px-4 py-2 marketplace-btn rounded-pill">View More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Collection Section-->
         <section class="py-5 bg-white border-bottom">
     <div class="container px-5">
         

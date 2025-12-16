@@ -11895,3 +11895,95 @@ html {
     height: 3rem;
     background-size: 50%;
 }
+
+/* =========================================
+   STYLE SECTION "KAMI JUGA TERSEDIA DI"
+   ========================================= */
+
+.marketplace-card {
+    position: relative;
+    width: 100%;
+    /* Tinggi kotak bisa disesuaikan, misal 300px atau 100% (persegi) */
+    height: 300px; 
+    border-radius: 51px; /* Sesuai permintaan: Kelengkungan 51 */
+    overflow: hidden;    /* Agar gambar tidak keluar dari kelengkungan */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+/* Gambar Background */
+.marketplace-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar gambar memenuhi kotak proporsional */
+    transition: transform 0.5s ease;
+}
+
+/* Efek Zoom saat disentuh */
+.marketplace-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Layer Overlay (Warna penutup saat disentuh) */
+.marketplace-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Warna overlay (Biru transparan) */
+    background: rgba(30, 48, 243, 0.7); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Munculkan overlay saat hover */
+.marketplace-card:hover .marketplace-overlay {
+    opacity: 1;
+}
+
+/* Tombol View More */
+.marketplace-btn {
+    transform: translateY(20px); /* Awalnya agak di bawah */
+    transition: transform 0.3s ease;
+}
+
+/* Animasi tombol naik ke tengah */
+.marketplace-card:hover .marketplace-btn {
+    transform: translateY(0);
+}
+
+/* =========================================
+   STYLE KHUSUS BRAND LOGO (Navbar)
+   ========================================= */
+
+.navbar-brand span {
+    /* Menggunakan font Bodoni Moda */
+    font-family: 'Bodoni Moda', serif;
+    
+    /* Mengatur ketebalan agar mirip gambar referensi */
+    font-weight: 700; 
+    
+    /* Ukuran font sedikit diperbesar agar lebih jelas */
+    font-size: 1.8rem; 
+    
+    /* Mengatur jarak antar huruf (sedikit dirapatkan agar elegan) */
+    letter-spacing: -1px; 
+    
+    /* Opsional: Jika ingin warna hitam seperti gambar referensi, 
+       hapus "text-primary" di HTML nav.php dan gunakan warna ini:
+       color: #000; 
+    */
+}
+
+.brand-text {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 700;
+    font-size: 2rem; /* Ukuran besar dan mewah */
+    letter-spacing: -1.5px; /* Rapat seperti logo Vogue */
+    color: #07479b; /* Warna hitam pekat */
+    line-height: 1;
+}

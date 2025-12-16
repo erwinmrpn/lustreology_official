@@ -5,7 +5,7 @@
         <a class="navbar-brand d-flex align-items-center" href="index.php">
             <img src="assets/new_logo.png" alt="lustreology Logo"
                  style="height: 80px; width: auto; margin-right: 10px;">
-            <span class="fw-bolder text-primary">Lustreology Official</span>
+            <span class="brand-text">Lustreology Official</span>
         </a>
 
         <!-- Mobile Toggle Button -->
@@ -35,7 +35,7 @@
 <style>
 /* Warna background navbar */
 .bg-cb {
-    background-color: #FFA8A8  !important;
+    background-color: #F9F8F6  !important;
 }
 
 /* Hover efek smooth */
