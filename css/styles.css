@@ -11762,11 +11762,11 @@ html {
 .category-scroll-container {
     display: flex;
     overflow-x: auto;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth;  <-- HAPUS BARIS INI (PENTING!) */
     gap: 20px;
     padding: 10px 5px;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .category-scroll-container::-webkit-scrollbar {

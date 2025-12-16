@@ -110,7 +110,7 @@
         </section>
 
         <!-- Collection Section-->
-        <section class="py-5 bg-white border-bottom">
+       <section class="py-5 bg-white border-bottom">
     <div class="container px-5">
         
         <div class="text-center mb-4">
@@ -196,86 +196,70 @@
     </div>
 
     <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const scrollContainer = document.getElementById('categoryWrapper');
-                const scrollLeftBtn = document.getElementById('scrollLeftBtn');
-                const scrollRightBtn = document.getElementById('scrollRightBtn');
+    document.addEventListener("DOMContentLoaded", function() {
+        const scrollContainer = document.getElementById('categoryWrapper');
+        const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+        const scrollRightBtn = document.getElementById('scrollRightBtn');
 
-                const scrollAmount = 300; 
-                const autoScrollSpeed = 2500; // Kecepatan otomatis
-                let autoScrollInterval;
+        // Pengaturan
+        const scrollAmount = 300; // Jarak geser tombol
+        const autoScrollSpeed = 1; // Kecepatan gerak otomatis (pixel per frame)
+        let isAutoScrolling = true;
+        let animationFrameId;
 
-                // 1. DUPLIKASI KONTEN (CLONING)
-                // Kita gandakan isi container agar saat scroll mentok kanan, 
-                // bisa kita 'teleportasi' balik ke awal tanpa user sadar.
-                if (scrollContainer) {
-                    scrollContainer.innerHTML += scrollContainer.innerHTML;
+        if (scrollContainer) {
+            
+            // 1. DUPLIKASI KONTEN (CLONING)
+            // Menggandakan isi agar saat scroll mentok, bisa reset ke awal tanpa terlihat
+            scrollContainer.innerHTML += scrollContainer.innerHTML;
+
+            // 2. ANIMASI FLOWING (MENGALIR TERUS)
+            function autoScrollAnimation() {
+                if (isAutoScrolling) {
+                    // Geser sedikit demi sedikit setiap frame
+                    scrollContainer.scrollLeft += autoScrollSpeed;
+                    
+                    // Cek Posisi untuk Reset (Infinity Loop)
+                    // Jika posisi scroll sudah melewati setengah (panjang konten asli)
+                    if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+                        // Reset instan ke 0 (karena isinya kembar, user tidak sadar)
+                        scrollContainer.scrollLeft = 0;
+                    }
                 }
+                // Ulangi animasi di frame berikutnya
+                animationFrameId = requestAnimationFrame(autoScrollAnimation);
+            }
 
-                // --- Fungsi Geser ---
-                function scrollNext() {
-                    if (!scrollContainer) return;
-                    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                }
+            // Mulai animasi
+            autoScrollAnimation();
 
-                function scrollPrev() {
-                    if (!scrollContainer) return;
+            // 3. FUNGSI TOMBOL MANUAL
+            if (scrollLeftBtn && scrollRightBtn) {
+                
+                scrollLeftBtn.addEventListener('click', function() {
+                    // Geser manual
                     scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                }
+                });
 
-                // --- Fungsi Auto Play ---
-                function startAutoScroll() {
-                    clearInterval(autoScrollInterval); 
-                    autoScrollInterval = setInterval(scrollNext, autoScrollSpeed);
-                }
+                scrollRightBtn.addEventListener('click', function() {
+                    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
 
-                function stopAutoScroll() {
-                    clearInterval(autoScrollInterval);
-                }
-
-                // --- Eksekusi ---
-                if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
-                    
-                    // Event Listener Scroll untuk efek "Infinite"
-                    scrollContainer.addEventListener('scroll', function() {
-                        // Jika posisi scroll sudah mencapai setengah (akhir dari set original)
-                        // Kita reset posisinya ke 0 (awal) secara instan (tanpa smooth behavior)
-                        // Ini menciptakan ilusi looping.
-                        const maxScrollLimit = scrollContainer.scrollWidth / 2;
-                        
-                        if (scrollContainer.scrollLeft >= maxScrollLimit) {
-                            scrollContainer.scrollLeft -= maxScrollLimit;
-                        } 
-                        // (Opsional) Jika mundur terlalu jauh ke kiri, lempar ke tengah
-                        else if (scrollContainer.scrollLeft <= 0) {
-                            // Deteksi ini agak tricky dengan behavior smooth, 
-                            // tapi ini menjaga agar tidak mentok kiri
-                        }
-                    });
-
-                    // Tombol Navigasi
-                    scrollLeftBtn.addEventListener('click', scrollPrev);
-                    scrollRightBtn.addEventListener('click', scrollNext);
-
-                    // Mulai Otomatis
-                    startAutoScroll();
-
-                    // Pause saat mouse di atas area (agar user mudah klik)
-                    scrollContainer.addEventListener('mouseenter', stopAutoScroll);
-                    scrollLeftBtn.addEventListener('mouseenter', stopAutoScroll);
-                    scrollRightBtn.addEventListener('mouseenter', stopAutoScroll);
-
-                    // Lanjut jalan saat mouse pergi
-                    scrollContainer.addEventListener('mouseleave', startAutoScroll);
-                    scrollLeftBtn.addEventListener('mouseleave', startAutoScroll);
-                    scrollRightBtn.addEventListener('mouseleave', startAutoScroll);
-                    
-                    // Support Touch (HP)
-                    scrollContainer.addEventListener('touchstart', stopAutoScroll);
-                    scrollContainer.addEventListener('touchend', startAutoScroll);
-                }
+            // 4. INTERAKSI MOUSE (PAUSE SAAT HOVER)
+            // Agar user bisa klik item tanpa slider lari-lari
+            const elementsToPause = [scrollContainer, scrollLeftBtn, scrollRightBtn];
+            
+            elementsToPause.forEach(el => {
+                el.addEventListener('mouseenter', () => { isAutoScrolling = false; });
+                el.addEventListener('mouseleave', () => { isAutoScrolling = true; });
+                // Support Touchscreen
+                el.addEventListener('touchstart', () => { isAutoScrolling = false; });
+                el.addEventListener('touchend', () => { isAutoScrolling = true; });
             });
-            </script>
+        }
+    });
+    </script>
 </section>
 
         <!-- Banner Section-->
@@ -294,19 +278,13 @@
                     
                     <div class="carousel-item active">
                         <div class="ratio-2x1">
-                            <img src="assets/banner1.jpg" class="d-block w-100" alt="Promo Banner 1" onerror="this.src='https://dummyimage.com/2000x1000/3572EF/fff&text=Banner+1+(2:1)'">
+                            <img src="assets/lustreology_welcome_banner.jpg" class="d-block w-100" alt="Promo Banner 1" onerror="this.src='https://dummyimage.com/2000x1000/3572EF/fff&text=Banner+1+(2:1)'">
                         </div>
                     </div>
 
                     <div class="carousel-item">
                         <div class="ratio-2x1">
-                            <img src="assets/banner2.jpg" class="d-block w-100" alt="Promo Banner 2" onerror="this.src='https://dummyimage.com/2000x1000/e21e80/fff&text=Banner+2+(2:1)'">
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="ratio-2x1">
-                            <img src="assets/banner3.jpg" class="d-block w-100" alt="Promo Banner 3" onerror="this.src='https://dummyimage.com/2000x1000/333/fff&text=Banner+3+(2:1)'">
+                            <img src="assets/lustreology_reseller_banner.jpg" class="d-block w-100" alt="Promo Banner 2" onerror="this.src='https://dummyimage.com/2000x1000/e21e80/fff&text=Banner+2+(2:1)'">
                         </div>
                     </div>
 
