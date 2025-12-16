@@ -138,71 +138,86 @@
     </div>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const scrollContainer = document.getElementById('categoryWrapper');
-        const scrollLeftBtn = document.getElementById('scrollLeftBtn');
-        const scrollRightBtn = document.getElementById('scrollRightBtn');
+            document.addEventListener("DOMContentLoaded", function() {
+                const scrollContainer = document.getElementById('categoryWrapper');
+                const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+                const scrollRightBtn = document.getElementById('scrollRightBtn');
 
-        // Konfigurasi
-        const scrollAmount = 320; // Jarak geser (pixel)
-        const autoScrollSpeed = 3000; // Kecepatan otomatis (3 detik)
-        let autoScrollInterval;
+                const scrollAmount = 300; 
+                const autoScrollSpeed = 2500; // Kecepatan otomatis
+                let autoScrollInterval;
 
-        // --- Fungsi Logika Geser ---
-        function scrollNext() {
-            if (!scrollContainer) return;
-            // Cek apakah sudah mentok kanan
-            const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+                // 1. DUPLIKASI KONTEN (CLONING)
+                // Kita gandakan isi container agar saat scroll mentok kanan, 
+                // bisa kita 'teleportasi' balik ke awal tanpa user sadar.
+                if (scrollContainer) {
+                    scrollContainer.innerHTML += scrollContainer.innerHTML;
+                }
 
-            // Jika sudah di ujung (toleransi 10px), balik ke awal (loop)
-            if (scrollContainer.scrollLeft >= maxScrollLeft - 10) {
-                scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
-        }
+                // --- Fungsi Geser ---
+                function scrollNext() {
+                    if (!scrollContainer) return;
+                    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
 
-        function scrollPrev() {
-            if (!scrollContainer) return;
-            scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
+                function scrollPrev() {
+                    if (!scrollContainer) return;
+                    scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                }
 
-        // --- Fungsi Auto Play ---
-        function startAutoScroll() {
-            clearInterval(autoScrollInterval); 
-            autoScrollInterval = setInterval(scrollNext, autoScrollSpeed);
-        }
+                // --- Fungsi Auto Play ---
+                function startAutoScroll() {
+                    clearInterval(autoScrollInterval); 
+                    autoScrollInterval = setInterval(scrollNext, autoScrollSpeed);
+                }
 
-        function stopAutoScroll() {
-            clearInterval(autoScrollInterval);
-        }
+                function stopAutoScroll() {
+                    clearInterval(autoScrollInterval);
+                }
 
-        // --- Eksekusi ---
-        if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
-            
-            // Event Klik Tombol
-            scrollLeftBtn.addEventListener('click', scrollPrev);
-            scrollRightBtn.addEventListener('click', scrollNext);
+                // --- Eksekusi ---
+                if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+                    
+                    // Event Listener Scroll untuk efek "Infinite"
+                    scrollContainer.addEventListener('scroll', function() {
+                        // Jika posisi scroll sudah mencapai setengah (akhir dari set original)
+                        // Kita reset posisinya ke 0 (awal) secara instan (tanpa smooth behavior)
+                        // Ini menciptakan ilusi looping.
+                        const maxScrollLimit = scrollContainer.scrollWidth / 2;
+                        
+                        if (scrollContainer.scrollLeft >= maxScrollLimit) {
+                            scrollContainer.scrollLeft -= maxScrollLimit;
+                        } 
+                        // (Opsional) Jika mundur terlalu jauh ke kiri, lempar ke tengah
+                        else if (scrollContainer.scrollLeft <= 0) {
+                            // Deteksi ini agak tricky dengan behavior smooth, 
+                            // tapi ini menjaga agar tidak mentok kiri
+                        }
+                    });
 
-            // Mulai Auto Scroll
-            startAutoScroll();
+                    // Tombol Navigasi
+                    scrollLeftBtn.addEventListener('click', scrollPrev);
+                    scrollRightBtn.addEventListener('click', scrollNext);
 
-            // Pause saat mouse di atas area (supaya user bisa klik)
-            scrollContainer.addEventListener('mouseenter', stopAutoScroll);
-            scrollLeftBtn.addEventListener('mouseenter', stopAutoScroll);
-            scrollRightBtn.addEventListener('mouseenter', stopAutoScroll);
+                    // Mulai Otomatis
+                    startAutoScroll();
 
-            // Lanjut jalan saat mouse pergi
-            scrollContainer.addEventListener('mouseleave', startAutoScroll);
-            scrollLeftBtn.addEventListener('mouseleave', startAutoScroll);
-            scrollRightBtn.addEventListener('mouseleave', startAutoScroll);
-            
-            // Support Touch (HP)
-            scrollContainer.addEventListener('touchstart', stopAutoScroll);
-            scrollContainer.addEventListener('touchend', startAutoScroll);
-        }
-    });
-    </script>
+                    // Pause saat mouse di atas area (agar user mudah klik)
+                    scrollContainer.addEventListener('mouseenter', stopAutoScroll);
+                    scrollLeftBtn.addEventListener('mouseenter', stopAutoScroll);
+                    scrollRightBtn.addEventListener('mouseenter', stopAutoScroll);
+
+                    // Lanjut jalan saat mouse pergi
+                    scrollContainer.addEventListener('mouseleave', startAutoScroll);
+                    scrollLeftBtn.addEventListener('mouseleave', startAutoScroll);
+                    scrollRightBtn.addEventListener('mouseleave', startAutoScroll);
+                    
+                    // Support Touch (HP)
+                    scrollContainer.addEventListener('touchstart', stopAutoScroll);
+                    scrollContainer.addEventListener('touchend', startAutoScroll);
+                }
+            });
+            </script>
 </section>
 
         <!-- Banner Section-->
